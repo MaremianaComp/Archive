@@ -30,6 +30,3 @@ Route::delete('/home/{document}', [HomeController::class, 'destroy'])->name('doc
 
 Route::get('/{document}', [DocumentController::class, 'detail'])->name('detail');
 Route::get('/places/{place}', [DocPlController::class, 'index'])->name('place');
-
-// Route::get('get-places/{id}', [DocPlController::class, 'getPlaces']);
-// Route::get('get-documents/{id}', [DocPlController::class, 'getDocuments']);
