@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Place;
-use App\Models\Document;
 use Illuminate\Http\Request;
 
 class DocPlController extends Controller
