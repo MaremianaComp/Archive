@@ -5,7 +5,7 @@
     <p>{{ $document->archive }}</p>
     <p>{{ $document->url }}</p>
     <p>{{ $document->created_at }}</p>
-    <p>Автор: {{ $document->user->name }}</p>
+    <p>{{ $document->user->name }}</p>
     <form action="{{ route('document.destroy', ['document' => $document->id]) }}"
       method="POST">
       @csrf
