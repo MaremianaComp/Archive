@@ -3,12 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LinkController;
-use App\Http\Controllers\TestController;
-use App\Http\Controllers\DocPlController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DocumentController;
-use App\Http\Controllers\RegisterController;
 
 Route::get('/', [DocumentController::class, 'index'])->name('index');
 
@@ -29,4 +24,4 @@ Route::delete('/home/{document}', [HomeController::class, 'destroy'])->name('doc
  ->middleware('can:destroy,document');
 
 Route::get('/{document}', [DocumentController::class, 'detail'])->name('detail');
-Route::get('/places/{place}', [DocPlController::class, 'index'])->name('place');
+
