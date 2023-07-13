@@ -25,3 +25,6 @@ Route::delete('/home/{document}', [HomeController::class, 'destroy'])->name('doc
 
 Route::get('/{document}', [DocumentController::class, 'detail'])->name('detail');
 
+// Route::resource('places/{place}/comments', CommentController::class)->only([
+//     'index', 'show',
+// ]);
