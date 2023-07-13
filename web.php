@@ -10,45 +10,10 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\RegisterController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Route::view('/', 'home.index')->name('home');
-
 Route::get('/', [DocumentController::class, 'index'])->name('index');
-
-
-// Route::get('/', [LinkController::class, 'index'])->name('home');
-
-Route::get('login', [LoginController::class, 'index'])->name('login');
-Route::post('login', [LoginController::class, 'store'])->name('login.store');
-
-Route::get('register', [RegisterController::class, 'index'])->name('register');
-Route::post('register', [RegisterController::class, 'store'])->name('register.store');
 
 Route::get('links', [LinkController::class, 'index'])->name('links');
 Route::get('links/{place}', [LinkController::class, 'show'])->name('links.show');
-Route::post('links/{place}/like', [LinkController::class, 'like'])->name('links.like');
-
-Route::resource('places/{place}/comments', CommentController::class)->only([
-    'index', 'show',
-]);
-
-//Route::get('/test', TestController::class)->name('test')->middleware('token:secret');
-Route::get('/test', TestController::class)->name('test');
-
-
-// Route::resource('places/{place}/documents', DocumentController::class)->only([
-//     'show',
-// ]);
 
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
